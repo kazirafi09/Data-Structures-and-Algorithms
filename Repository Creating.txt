@@ -1,0 +1,17 @@
+Repository Creating:
+
+git init
+git remote add origin https://github.com/yourusername/your-repo.git
+git remote -v
+
+If added something before:
+
+git pull origin main --allow-unrelated-histories
+git pull origin master --allow-unrelated-histories
+
+New file add:
+
+git add .
+git commit -m "Add local project files"
+git push origin main
+
