@@ -9,8 +9,6 @@ Purpose
 
 Languages Used
 - Python
-- Java
-- C
 
 Repository Structure
 - Problems are organized by topic (Arrays, Strings, Linked List, Trees, etc.)
