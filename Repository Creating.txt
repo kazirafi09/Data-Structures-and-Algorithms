@@ -12,6 +12,6 @@ git pull origin master --allow-unrelated-histories
 New file add:
 
 git add .
-git commit -m "Add local project files"
+git commit -m "New Problems Solved"
 git push origin main
 
