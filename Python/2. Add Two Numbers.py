@@ -1,32 +1,28 @@
-class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        num1 = 0
-        multiplier = 1
-        curr = l1
-        while curr:
-            num1 += curr.val * multiplier
-            multiplier *= 10
-            curr = curr.next
-            
-        num2 = 0
-        multiplier = 1
-        curr = l2
-        while curr:
-            num2 += curr.val * multiplier
-            multiplier *= 10
-            curr = curr.next
-            
-        total = num1 + num2
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        dummy = ListNode()
+        cur = dummy
+        carry = 0
+
+        while l1 or l2 or carry:
+
+            v1 = l1.val if l1 else 0
+            v2 = l2.val if l2 else 0
+
+            val = v1 + v2 + carry
+            carry = val // 10
+            val = val % 10
+            cur.next = ListNode(val)
+            cur = cur.next
+
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
         
-        if total == 0:
-            return ListNode(0)
-            
-        dummy = ListNode(0)
-        curr = dummy
-        while total > 0:
-            digit = total % 10      
-            curr.next = ListNode(digit) 
-            curr = curr.next       
-            total //= 10       
-            
         return dummy.next
+    
+        
